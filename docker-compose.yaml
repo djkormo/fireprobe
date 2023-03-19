@@ -22,7 +22,7 @@ services:
      - 9114:9114 
      
  rfbenchmark: 
-   image: djkormo/rfbenchmark:latest 
+   image: djkormo/rfbenchmark:main 
    container_name: rfb-testserver 
    networks: 
      - rfbenchmark

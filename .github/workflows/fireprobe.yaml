@@ -1,4 +1,4 @@
-name: haproxy build all pipeline
+name: fireprobe build all pipeline
 
 on:
   push:
@@ -55,7 +55,7 @@ jobs:
         labels: ${{ steps.meta.outputs.labels }}
         
 
-    - name: Run Trivy vulnerability scanner for haproxy
+    - name: Run Trivy vulnerability scanner for fireprobe
       uses: aquasecurity/trivy-action@master
       with:
         image-ref: djkormo/fireprobe:main

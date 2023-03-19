@@ -28,7 +28,7 @@ jobs:
       with:
       # list of Docker images to use as base name for tags
         images: |
-          djkormo/fireprobe
+          djkormo/rfbenchmark
         # generate Docker tags based on the following events/attributes
         tags: |
           type=schedule
@@ -55,7 +55,7 @@ jobs:
         labels: ${{ steps.meta.outputs.labels }}
         
 
-    - name: Run Trivy vulnerability scanner for fireprobe
+    - name: Run Trivy vulnerability scanner for rfbenchmark
       uses: aquasecurity/trivy-action@master
       with:
         image-ref: djkormo/rfbenchmark:main

@@ -14,7 +14,7 @@ jobs:
   
     runs-on: ubuntu-latest
     env:
-      APP_NAME: fireprobe
+      APP_NAME: ooklaspeedtest
 
     steps:
     - uses: actions/checkout@v2
@@ -46,7 +46,7 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         
-    - name: Build and push fireprobe
+    - name: Build and push ooklaspeedtest
       uses: docker/build-push-action@v2
       with:
         context: ooklaspeedtest/

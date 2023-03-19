@@ -1,0 +1,39 @@
+version: '3' 
+services: 
+ ookla: 
+   image: djkormo/ooklaspeedtest:main 
+   container_name: ooklaspeedtest 
+   networks: 
+     - ooklaspeedtest
+   
+   restart: always 
+   ports: 
+     - 8080:8080 
+     - 5060:5060 
+     
+ fireprobe: 
+   image: djkormo/fireprobe:main 
+   container_name: fireprobe 
+   networks: 
+     - fireprobe
+   restart: always 
+   ports: 
+     - 9113:9113 
+     - 9114:9114 
+     
+ rfbenchmark: 
+   image: djkormo/rfbenchmark:latest 
+   container_name: rfb-testserver 
+   networks: 
+     - rfbenchmark
+ 
+   restart: always 
+   ports: 
+     - 8888:8888 
+   environment: 
+     - RFB_LOG_LEVEL=debug 
+
+networks:
+  ooklaspeedtest:
+  fireprobe:
+  rfbenchmark:

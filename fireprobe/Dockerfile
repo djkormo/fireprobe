@@ -1,5 +1,4 @@
 FROM python:3.8-slim
-MAINTAINER Lukasz Zalewski <lukasz.zalewski@plus.pl>
 
 # Get and install required packages.
 RUN apt-get update && apt-get install -y -q \

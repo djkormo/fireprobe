@@ -5,7 +5,7 @@ on:
     paths:
       - '**.bash'
       - '**.sh'
-      - 'fireprobe/Dockerfile'
+      - 'rfbenchmark/Dockerfile'
 
 jobs:
 

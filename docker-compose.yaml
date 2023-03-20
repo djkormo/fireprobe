@@ -1,8 +1,18 @@
-version: '3' 
+version: '3.7' 
 services: 
  ookla: 
    image: djkormo/ooklaspeedtest:main 
    container_name: ooklaspeedtest 
+   deploy:
+    resources:
+      limits:
+        cpus: 0.50
+        memory: 512M
+# WARNING: The following deploy sub-keys are not supported and have been ignored: resources.reservations.cpus
+#      reservations:
+#       cpus: 0.25
+#      memory: 128M
+
    networks: 
      - ooklaspeedtest
    
@@ -14,6 +24,11 @@ services:
  fireprobe: 
    image: djkormo/fireprobe:main 
    container_name: fireprobe 
+   deploy:
+    resources:
+      limits:
+        cpus: 0.50
+        memory: 512M
    networks: 
      - fireprobe
    restart: always 
@@ -24,6 +39,11 @@ services:
  rfbenchmark: 
    image: djkormo/rfbenchmark:main 
    container_name: rfb-testserver 
+   deploy:
+    resources:
+      limits:
+        cpus: 0.50
+        memory: 512M
    networks: 
      - rfbenchmark
  
